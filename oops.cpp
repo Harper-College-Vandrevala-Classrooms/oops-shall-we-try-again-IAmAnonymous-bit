@@ -21,13 +21,4 @@ int validInput(int lower, int upper, string prompt, string error)
 
     return input;
 
-}
-
-int main() 
-{
-    int value = validInput(0, 100, "Please enter a value: ", "Your value is invalid");
-
-    cout << "Your value is " << value << ".\n";
-
-    return 0;
-}
+};
