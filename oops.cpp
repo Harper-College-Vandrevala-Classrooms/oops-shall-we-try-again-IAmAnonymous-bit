@@ -29,7 +29,8 @@ string validInput(string prompt, string error)
     while (!valid_in)
     {
         cout << prompt << endl;
-        cin >> input;
+        getline(cin, input);
+        
         if (input.length() > 0) {
             valid_in = true;
         } else {
