@@ -25,7 +25,7 @@ int validInput(int lower, int upper, string prompt, string error)
         if (temp == "default") {
             return 100;
         } else if (temp == "exit"){
-            return 0;
+            return -1;
         } else {
             if (!isdigit(input[0]))
             {
