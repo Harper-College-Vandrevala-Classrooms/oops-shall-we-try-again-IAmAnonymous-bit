@@ -48,7 +48,7 @@ string validInput(string prompt, string error)
     while (!valid_in)
     {
         cout << prompt << endl;
-        cout << "Enter \"defaut\" to use the default value of 100" << endl;
+        cout << "Enter \"defaut\" to use the default value of \"Hello\"" << endl;
         cout << "Enter \"exit\" to leave the menu" << endl;
         getline(cin, input);
 
@@ -58,7 +58,10 @@ string validInput(string prompt, string error)
             temp += tolower(input[i]);
         }
 
-        if (temp == "exit"){
+
+        if (temp == "default") {
+            return "Hello";
+        } else if (temp == "exit") {
             return "";
         } else if (input.length() > 0) {
             valid_in = true;
