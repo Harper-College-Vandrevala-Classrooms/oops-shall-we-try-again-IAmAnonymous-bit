@@ -21,18 +21,21 @@ int validInput(int lower, int upper, string prompt, string error)
         {
             temp += tolower(input[i]);
         }
-
-        if (temp == "default") {
+        if (temp.length() < 1) {
+            cout << error << endl;
+        } else if (temp == "default") {
             return 100;
         } else if (temp == "exit"){
             return -1;
+        } else if (!isdigit(input[0])) {
+            cout << error << endl;
         } else {
-            if (!isdigit(input[0]))
+            value = stoi(input);
+            if (value >= lower && value <= upper)
             {
-                cout << error << endl;
-            } else {
-                value = stoi(input);
                 valid_in = true;
+            } else {
+                cout << error << endl;
             }
         }
     }
@@ -59,7 +62,9 @@ string validInput(string prompt, string error)
         }
 
 
-        if (temp == "default") {
+        if (temp.length() < 1) {
+            cout << error << endl;
+        } else if (temp == "default") {
             return "Hello";
         } else if (temp == "exit") {
             return "";
